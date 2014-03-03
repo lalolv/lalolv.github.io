@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <update xmlns="http://ns.adobe.com/air/framework/update/description/2.5">
-	<versionNumber>0.6.3</versionNumber>
-	<versionLabel>Beta v0.6.3</versionLabel>
-	<url>http://kfm-air.u.qiniudn.com/learn-0_6_3.air</url>
+	<versionNumber>0.6.4</versionNumber>
+	<versionLabel>Beta v0.6.4</versionLabel>
+	<url>http://kfm-air.u.qiniudn.com/learn-0_6_4.air</url>
 	<description></description>
 </update>
