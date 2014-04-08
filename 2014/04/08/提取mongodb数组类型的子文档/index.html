@@ -1,0 +1,426 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>提取MongoDB数组类型的子文档 | lalo.im</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Lalo">
+    
+    <meta name="description" content="需求
+设计MongoDB数据库时，常常会把数组嵌入到子文档中。
+在读取数据时，还需要单独把子文档提取出来，并作出进一步处理，如排序、查询条件等。
+背景
+MongoDB 2.2 版本开始，引入了一个全新的功能——管道。
+管道的概念大概是借鉴了UNIX，而且在很多语言设计中，都有管道的概念，可见UNIX系统对后来计算机的发展影响深远。
+概念
+每个文档通过一个由多个节点组成的管道，每个节点有自己特殊的功能（分组、过滤等），文档经过管道处理后，最后输出相应的结果。
+管道基本的功能有两个：一是对文档进行“过滤”，也就是筛选出符合条件的文档;二是对文档进行“变换”，也就是改变文档的输出形式。
+其他的一些功能还包括按照某个指定的字段分组和排序等。而且在每个阶段还可以使用表达式操作符计算平均值和拼接字符串等相关操作。
+管道提供了一个MapReduce 的替代方案，MapReduce使用相对来说比较复杂，而管道的拥有固定的接口(操作符表达),
+使用比较简单，对于大多数的聚合任务管道一般来说是首选方法。">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="lalo.im" title="lalo.im"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="lalo.im">lalo.im</a></h1>
+				<h2 class="blog-motto">合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:lalo.im">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/04/08/提取mongodb数组类型的子文档/" title="提取MongoDB数组类型的子文档" itemprop="url">提取MongoDB数组类型的子文档</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://lalo.im" title="Lalo">Lalo</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-04-08T00:37:19.000Z" itemprop="datePublished">4月 8 2014</time>
+    更新日期:<time datetime="2014-04-08T01:22:07.000Z" itemprop="dateModified">4月 8 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-"><span class="toc-number">4.</span> <span class="toc-text">上面的代码解释如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mongodb-"><span class="toc-number">5.</span> <span class="toc-text">MongoDB的操作符：</span></a></li></ol>
+		</div>
+		
+		<h4 id="-">需求</h4>
+<p>设计MongoDB数据库时，常常会把数组嵌入到子文档中。</p>
+<p>在读取数据时，还需要单独把子文档提取出来，并作出进一步处理，如排序、查询条件等。</p>
+<h4 id="-">背景</h4>
+<p>MongoDB 2.2 版本开始，引入了一个全新的功能——管道。</p>
+<p>管道的概念大概是借鉴了UNIX，而且在很多语言设计中，都有管道的概念，可见UNIX系统对后来计算机的发展影响深远。</p>
+<h4 id="-">概念</h4>
+<p>每个文档通过一个由多个节点组成的管道，每个节点有自己特殊的功能（分组、过滤等），文档经过管道处理后，最后输出相应的结果。</p>
+<p>管道基本的功能有两个：一是对文档进行“过滤”，也就是筛选出符合条件的文档;二是对文档进行“变换”，也就是改变文档的输出形式。
+其他的一些功能还包括按照某个指定的字段分组和排序等。而且在每个阶段还可以使用表达式操作符计算平均值和拼接字符串等相关操作。</p>
+<p>管道提供了一个MapReduce 的替代方案，MapReduce使用相对来说比较复杂，而管道的拥有固定的接口(操作符表达),
+使用比较简单，对于大多数的聚合任务管道一般来说是首选方法。</p>
+<a id="more"></a>
+
+<p>例如有下面一个文档，每条文档记录都包含了一个评论列表。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre>[
+	{
+		"<span class="attribute">id</span>": <span class="value"><span class="number">1</span></span>,
+		"<span class="attribute">comments</span>":
+		<span class="value">[
+			{"<span class="attribute">text</span>": <span class="value"><span class="string">"评论A"</span></span>, "<span class="attribute">time</span>": <span class="value"><span class="number">1123495443</span></span>},
+			{"<span class="attribute">text</span>": <span class="value"><span class="string">"评论B"</span></span>, "<span class="attribute">time</span>": <span class="value"><span class="number">1123495443</span></span>},
+			{"<span class="attribute">text</span>": <span class="value"><span class="string">"评论C"</span></span>, "<span class="attribute">time</span>": <span class="value"><span class="number">1123495443</span></span>},
+		]
+	</span>},
+	{
+		"<span class="attribute">id</span>": <span class="value"><span class="number">2</span></span>,
+		"<span class="attribute">comments</span>":
+		<span class="value">[
+			{"<span class="attribute">text</span>": <span class="value"><span class="string">"评论A"</span></span>, "<span class="attribute">time</span>": <span class="value"><span class="number">1123495443</span></span>},
+			{"<span class="attribute">text</span>": <span class="value"><span class="string">"评论B"</span></span>, "<span class="attribute">time</span>": <span class="value"><span class="number">1123495443</span></span>},
+			{"<span class="attribute">text</span>": <span class="value"><span class="string">"评论C"</span></span>, "<span class="attribute">time</span>": <span class="value"><span class="number">1123495443</span></span>},
+		]
+	</span>}
+]
+</pre></td></tr></table></figure>
+
+<p>下面的工作就是，如何只提取出指定条目的评论列表。</p>
+<p>我使用Go语言为例，通过管道的使用，把一个条目中的评论列表提取出来。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre>p1 := bson.M{<span class="string">"$match"</span>: bson.M{<span class="string">"_id"</span>: bson.ObjectIdHex(id)}}
+p2 := bson.M{<span class="string">"$project"</span>: bson.M{<span class="string">"_id"</span>:<span class="number"> 0</span>, <span class="string">"comments"</span>:<span class="number"> 1</span>}}
+p3 := bson.M{<span class="string">"$unwind"</span>: <span class="string">"$comments"</span>}
+p4 := bson.M{<span class="string">"$sort"</span>: bson.M{<span class="string">"comments.time"</span>:<span class="number"> -1</span>}}
+p5 := bson.M{<span class="string">"$skip"</span>:<span class="number"> 0</span>}
+p6 := bson.M{<span class="string">"$limit"</span>:<span class="number"> 10</span>}
+pipe := c.Pipe([]bson.M{p1, p2, p3, p4, p5, p6})
+iter := pipe.Iter()
+<span class="keyword">var</span> list []bson.M
+iter.All(&list)
+iter.Close()
+</pre></td></tr></table></figure>
+
+<h4 id="-">上面的代码解释如下：</h4>
+<ul>
+<li>p1 p2 p3 ... p6 定义了6个管道，每个管道都有相应的工作。</li>
+<li>通过 Pipe 管道的方式，把6个管道连接起来，并顺序执行。</li>
+<li>Iter() 方法，返回数据列表的迭代器，最后，别忘了使用 Close() 方法关闭。</li>
+</ul>
+<h4 id="mongodb-">MongoDB的操作符：</h4>
+<ul>
+<li>$match 条件匹配，这里查询一条集合。</li>
+<li>$project 显示或隐藏对应的字段，还有添加、重命名等其他功能。</li>
+<li>$unwind 将数组元素拆分为独立字段</li>
+<li>$sort $skip $limit 排序、跳过、条数，这三个比较好理解</li>
+</ul>
+<blockquote>
+<p>MongoDB 的官方文档有更加详细的说明
+<a href="http://docs.mongodb.org/manual/core/aggregation-pipeline/" target="_blank">MongoDB管道</a></p>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/MongoDB/">MongoDB</a><a href="/tags/Go/">Go</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/MongoDB/">MongoDB</a>►<a class="article-category-link" href="/categories/MongoDB/Go/">Go</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://lalo.im/2014/04/08/提取mongodb数组类型的子文档/" data-title="提取MongoDB数组类型的子文档 | lalo.im" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/04/04/验证邮件地址的正则表达式/"  title="验证邮件地址的正则表达式">
+ <strong>NEXT:</strong><br/> 
+ <span>验证邮件地址的正则表达式
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-"><span class="toc-number">2.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-"><span class="toc-number">3.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-"><span class="toc-number">4.</span> <span class="toc-text">上面的代码解释如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mongodb-"><span class="toc-number">5.</span> <span class="toc-text">MongoDB的操作符：</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/C#/" title="C#">C#<sup>1</sup></a></li>
+		
+			<li><a href="/categories/MongoDB/Go/" title="Go">Go<sup>1</sup></a></li>
+		
+			<li><a href="/categories/MongoDB/" title="MongoDB">MongoDB<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/C#/" title="C#">C#<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Go/" title="Go">Go<sup>1</sup></a></li>
+		
+			<li><a href="/tags/MongoDB/" title="MongoDB">MongoDB<sup>1</sup></a></li>
+		
+			<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://lalo.im" target="_blank" title="Lalo">Lalo</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>

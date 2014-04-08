@@ -4,15 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>OS X Python pip 中断错误 | lalo.im</title>
+    <title>验证邮件地址的正则表达式 | lalo.im</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Lalo">
     
-    <meta name="description" content="在 Mac OS X 10.8 中会出现Python pip中断醒错误：DistributionNotFound。
-解决方法：
-使用 easy_install 升级 pip 到最新版本：
-sudo easy_install -U pip">
+    <meta name="description" content="正则表达式可以看成是一种具有特定功能的编程语言，在程序中总是起着难以置信的作用，但是开发人员却很少使用。
+最初的正则表达式，是在UNIX环境下产生的，后来微软将其移植到自己的Windows环境中。
+正则表达式是一种微型的语言，所以语法相对简单，但是灵活运用却不是简单的事情。">
     
     
     
@@ -68,15 +67,15 @@ sudo easy_install -U pip">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/02/18/os-x-python-pip-中断错误/" title="OS X Python pip 中断错误" itemprop="url">OS X Python pip 中断错误</a>
+      <a href="/2014/04/04/验证邮件地址的正则表达式/" title="验证邮件地址的正则表达式" itemprop="url">验证邮件地址的正则表达式</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://lalo.im" title="Lalo">Lalo</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-02-18T07:45:24.000Z" itemprop="datePublished">2月 18 2014</time>
-    更新日期:<time datetime="2014-02-18T07:49:21.000Z" itemprop="dateModified">2月 18 2014</time>
+    <time datetime="2014-04-04T07:23:07.000Z" itemprop="datePublished">4月 4 2014</time>
+    更新日期:<time datetime="2014-04-04T07:36:30.000Z" itemprop="dateModified">4月 4 2014</time>
     
   </p>
 </header>
@@ -88,20 +87,84 @@ sudo easy_install -U pip">
 		
 		</div>
 		
-		<p>在 Mac OS X 10.8 中会出现Python pip中断醒错误：DistributionNotFound。
-解决方法：
-使用 easy_install 升级 pip 到最新版本：
-sudo easy_install -U pip</p>
+		<p>正则表达式可以看成是一种具有特定功能的编程语言，在程序中总是起着难以置信的作用，但是开发人员却很少使用。
+最初的正则表达式，是在UNIX环境下产生的，后来微软将其移植到自己的Windows环境中。
+正则表达式是一种微型的语言，所以语法相对简单，但是灵活运用却不是简单的事情。
+<a id="more"></a></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre><span class="comment">// 待匹配的输入串</span>
+<span class="built_in">string</span> input <span class="subst">=</span> <span class="string">"zhangsan@gmail.com"</span>;
+<span class="comment">// 正则表达式</span>
+<span class="built_in">string</span> patten <span class="subst">=</span> @<span class="string">"[a-zA-Z]+@[a-zA-Z]+\.com$"</span>;
+<span class="comment">// 声明一个Regex对象</span>
+Regex r <span class="subst">=</span> <span class="literal">new</span> Regex(patten);
+<span class="comment">// 使用Match方法进行匹配</span>
+<span class="keyword">Match</span> m <span class="subst">=</span> r<span class="built_in">.</span><span class="keyword">Match</span>(input);
+<span class="comment">// 循环输出所有的匹配子串</span>
+<span class="keyword">if</span> (m<span class="built_in">.</span>Success)
+{
+	Console<span class="built_in">.</span>WriteLine(m<span class="built_in">.</span>Value);
+}
+<span class="keyword">else</span>
+{
+	Console<span class="built_in">.</span>WriteLine(<span class="string">"错误的 Email 地址！"</span>);
+}
+</pre></td></tr></table></figure>
+
+<p>使用正大表达式可以实现哪些更复杂而高级的字符串操作：</p>
+<ul>
+<li>可以识别出字符串中所有重复的单词。</li>
+<li>转换字符串格式，比如通过一个表达式就可以把一篇短文起始段落的单词首字母大写。</li>
+<li>检查字符串是否大小写形式。</li>
+<li>可以分离URI地址的各个元素，包括协议、计算机名称和文件目录等。</li>
+<li>检验各种常用的格式，如身份证、手机号码、电子邮件等格式。</li>
+</ul>
+<p>正则表达式毕竟是一个简单的语言，大多时候需要和其他高级语言结合使用，这样才能取长补短，发挥更大的功效。
+正则表达式的本质是使用一系列特殊字符模式，来表示某一类字符串，上面的表达式可以这样解释：</p>
+<ul>
+<li>“[a-zA-Z]+”：指包含1个或多个大小写英文字母的字符串。</li>
+<li>com$：指以“com”结尾的字符串。</li>
+<li>.：使用转移字符“\”来表示一个普通的字符“.”，
+因为“.”在正则表达式中也具有特殊的作用。注意在使用转移字符“\”时，需要在字符串前加上“@”符号。</li>
+</ul>
+<p>“[a-zA-Z]+@[a-zA-Z]+.com$”可以匹配：非空字符串+‘@’+非空字符串+以“.com”结尾的字符串。
+因此，想要构造正则表达式，必须掌握这些特殊的表达形式。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/C#/">C#</a><a href="/tags/正则表达式/">正则表达式</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/C#/">C#</a>
+</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://lalo.im/2014/02/18/os-x-python-pip-中断错误/" data-title="OS X Python pip 中断错误 | lalo.im" data-tsina="null" class="share clearfix">
+  <div data-url="http://lalo.im/2014/04/04/验证邮件地址的正则表达式/" data-title="验证邮件地址的正则表达式 | lalo.im" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -110,14 +173,14 @@ sudo easy_install -U pip</p>
 	
 <nav class="article-nav clearfix">
  
-
-<div class="next">
-<a href="/2014/02/07/hello-world/"  title="Hello World">
- <strong>NEXT:</strong><br/> 
- <span>Hello World
-</span>
+ <div class="prev" >
+ <a href="/2014/04/08/提取mongodb数组类型的子文档/" title="提取MongoDB数组类型的子文档">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  提取MongoDB数组类型的子文档</span>
 </a>
 </div>
+
 
 </nav>
 
@@ -135,8 +198,36 @@ sudo easy_install -U pip</p>
 <aside class="clearfix">
 
   
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/C#/" title="C#">C#<sup>1</sup></a></li>
+		
+			<li><a href="/categories/MongoDB/Go/" title="Go">Go<sup>1</sup></a></li>
+		
+			<li><a href="/categories/MongoDB/" title="MongoDB">MongoDB<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
 
   
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/C#/" title="C#">C#<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Go/" title="Go">Go<sup>1</sup></a></li>
+		
+			<li><a href="/tags/MongoDB/" title="MongoDB">MongoDB<sup>1</sup></a></li>
+		
+			<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
 
   <div class="rsspart">
 	<a href="null" target="_blank" title="rss">RSS 订阅</a>
