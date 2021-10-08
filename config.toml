@@ -1,0 +1,142 @@
+######################## default configuration ####################
+baseURL = "https://lalo.im"
+languageCode = "en-us"
+title = "Lalo's Blog"
+theme = "liva"
+summaryLength = "10"
+paginate = 6
+disqusShortname = ""
+publishDir = "docs"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+############################# Plugins ##############################
+[params.plugins]
+
+  # CSS Plugins
+  [[params.plugins.css]]
+  URL = "plugins/bootstrap/bootstrap.min.css"
+  [[params.plugins.css]]
+  URL = "plugins/slick/slick.css"
+  [[params.plugins.css]]
+  URL = "plugins/themify-icons/themify-icons.css"
+  [[params.plugins.css]]
+  URL = "plugins/venobox/venobox.css"
+
+  # JS Plugins
+  [[params.plugins.js]]
+  URL = "plugins/jQuery/jquery.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/bootstrap/bootstrap.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/slick/slick.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/venobox/venobox.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/fuse.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/mark.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/search.js"
+
+
+############################## navigation ###############################
+[menu]
+
+  # main menu
+  [[menu.main]]
+  name = "关于"
+  URL = "about"
+  weight = 1
+
+  [[menu.main]]
+  name = "文章"
+  URL = "blog"
+  weight = 2
+
+  [[menu.main]]
+  name = "联系"
+  URL = "contact"
+  weight = 3
+
+  # footer menu
+  [[menu.footer]]
+  name = "关于"
+  URL = "about"
+  weight = 1
+
+  [[menu.footer]]
+  name = "文章"
+  URL = "blog"
+  weight = 2
+
+  [[menu.footer]]
+  name = "联系"
+  URL = "contact"
+  weight = 3
+
+
+#################### default parameters ################################
+[params]
+logo = "images/logo.png"
+home = "Home"
+# Meta data
+description = "This is meta description"
+author = "Lalo"
+# Google Analitycs
+googleAnalitycsID = "Your ID"
+# Contact Information
+mobile = "17028329209"
+email = "work@lalo.im"
+location = "广东省深圳市"
+# copyright
+copyright = "| copyright &copy; 2021 [Lalo](https://lalo.im/) All Rights Reserved |"
+
+  # Preloader
+  [params.preloader]
+  enable = true
+  preloader = "" # use .png , .svg or .gif format
+
+  # search
+  [params.search]
+  enable = true
+
+############################ news letter ########################
+[params.newsletter]
+enable = true
+title = "邮件订阅"
+content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero"
+
+
+# cookies
+[params.cookies]
+enable = true
+expire_days = 2
+
+
+############################# social site ########################
+[[params.social]]
+title = "facebook"
+icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
+link = "https://www.facebook.com/profile.php?viewas=100000686899395&id=100071102862940"
+
+[[params.social]]
+title = "twitter"
+icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "instagram"
+icon = "ti-instagram" # themify icon : https://themify.me/themify-icons
+link = "https://www.instagram.com/lalolyu/"
+
+[[params.social]]
+title = "github"
+icon = "ti-github" # themify icon : https://themify.me/themify-icons
+link = "https://github.com/lalolv"
+
+[[params.social]]
+title = "linkedin"
+icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+link = "#"

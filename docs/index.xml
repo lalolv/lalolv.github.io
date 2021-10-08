@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lalo&#39;s Blog</title>
+    <link>https://lalo.im/</link>
+    <description>Recent content on Lalo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Sep 2021 05:17:45 +0800</lastBuildDate><atom:link href="https://lalo.im/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://lalo.im/posts/my-first-post/</link>
+      <pubDate>Fri, 03 Sep 2021 05:17:45 +0800</pubDate>
+      
+      <guid>https://lalo.im/posts/my-first-post/</guid>
+      <description>Hello World 这是第一个测试内容</description>
+    </item>
+    
+    <item>
+      <title>跨境电商</title>
+      <link>https://lalo.im/blog/post-1/</link>
+      <pubDate>Sun, 08 Aug 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-1/</guid>
+      <description>介绍 真正的全渠道，精雕细琢，极其灵活和完整的商业接口。 使用您最喜欢的 CMS、CRM、外部系统 API，PIM、POS、ERP 或未来平台。 使用最新技术，渐进式 Web 应用,灵活的 API 架构和插件系统，支持多种销售渠道。 自动本地化定价、税收、控制折扣和促销活动。</description>
+    </item>
+    
+    <item>
+      <title>高登交易</title>
+      <link>https://lalo.im/blog/post-2/</link>
+      <pubDate>Sat, 07 Aug 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-2/</guid>
+      <description>简介 高登交易，通过报价和竞价采购的形式，达成企业双方交易。除此之外还涵盖了验厂验货直播、货运物流、任务悬赏、社区交流等功能，实现了立体的企业管控新模式。
+交易 该平台以最先进的竞价采购形式发布交易信息，包括公开竞价和邀请竞价，也可以直接定向采购。供应商之间通过报价竞价的方式，把信息提交给采购商。采购商则可以选择最优的采购方案。
+ 社区 企业可以发布文本、图片或视频等信息，与其他企业之间交流。
+ 直播 该直播只针对制造业的专业领域，涵盖了验厂、验货等场景化直播。</description>
+    </item>
+    
+    <item>
+      <title>艺考帮</title>
+      <link>https://lalo.im/blog/post-3/</link>
+      <pubDate>Fri, 06 Aug 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-3/</guid>
+      <description>关于 艺考帮 app 是一款利于美术艺考生学习的客户端应用，艺考帮中海量素材，随搜随用，个性推荐知识点和范例作品，首创模拟考，在线打分、点评、进行成绩 PK，在艺圈结识与您志趣相投的朋友，非常的方便实用。
+功能介绍 【艺考帮&amp;ndash;你身边的美术老师】
+〖预约报名〗——遇到好画室、好老师即可线上预约报名；
+〖线上画室〗——分分钟就可开个线上画室，操作简单方便；
+〖线上课程〗——画室、老师简单设置即可线上开课；</description>
+    </item>
+    
+    <item>
+      <title>开放式工作流的设计</title>
+      <link>https://lalo.im/blog/post-7/</link>
+      <pubDate>Sat, 08 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-7/</guid>
+      <description>特性  自定义工作流 表单构建器 跨团队合作 共享工作流 机器人代替执行  应用场景  内部工作审批 外部团队合作 企业培训  设计图 待更新</description>
+    </item>
+    
+    <item>
+      <title>高登商务小程序</title>
+      <link>https://lalo.im/blog/post-6/</link>
+      <pubDate>Mon, 03 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-6/</guid>
+      <description>特性  三分级分销代理 实时计算收益 新的合伙人模式  原型设计 Figma 原型设计图
+预览   扫码进入小程序  </description>
+    </item>
+    
+    <item>
+      <title>基于AR的场景化直播设计</title>
+      <link>https://lalo.im/blog/post-5/</link>
+      <pubDate>Sun, 02 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-5/</guid>
+      <description>特性  场景化直播：验厂、验货、巡查、验资等。 AR 技术，测量、3D 模型。 直播笔记 直播流程  部分设计图    </description>
+    </item>
+    
+    <item>
+      <title>数据工厂</title>
+      <link>https://lalo.im/blog/post-4/</link>
+      <pubDate>Sat, 01 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-4/</guid>
+      <description>概要 数据工人，数据生成器。通过配置文件，可以批量生成一系列随机数据。
+应用场景  大数据测试 Demo 演示 开发过程中的单元测试  特性  配置文件，定义输出的字段和一些参数。 加载外部字典，获取更多数据。 自定义格式化输出数据  Github 地址</description>
+    </item>
+    
+    <item>
+      <title>《由浅入深学 C#》</title>
+      <link>https://lalo.im/blog/post-9/</link>
+      <pubDate>Mon, 11 Nov 2019 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-9/</guid>
+      <description>关于 豆瓣读书
+ 出版社: 电子工业出版社 出版年: 2011-7 页数: 519 定价: 69.</description>
+    </item>
+    
+    <item>
+      <title>《Flex 从入门到实践》</title>
+      <link>https://lalo.im/blog/post-8/</link>
+      <pubDate>Tue, 29 Oct 2019 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-8/</guid>
+      <description>关于 豆瓣读书
+ 出版社: 清华大学出版社 出版年: 2009-9 页数: 419 定价: 59.</description>
+    </item>
+    
+  </channel>
+</rss>

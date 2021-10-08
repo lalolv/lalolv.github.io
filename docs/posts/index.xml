@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Lalo&#39;s Blog</title>
+    <link>https://lalo.im/posts/</link>
+    <description>Recent content in Posts on Lalo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Sep 2021 05:17:45 +0800</lastBuildDate><atom:link href="https://lalo.im/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://lalo.im/posts/my-first-post/</link>
+      <pubDate>Fri, 03 Sep 2021 05:17:45 +0800</pubDate>
+      
+      <guid>https://lalo.im/posts/my-first-post/</guid>
+      <description>Hello World 这是第一个测试内容</description>
+    </item>
+    
+  </channel>
+</rss>

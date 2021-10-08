@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>项目 on Lalo&#39;s Blog</title>
+    <link>https://lalo.im/categories/%E9%A1%B9%E7%9B%AE/</link>
+    <description>Recent content in 项目 on Lalo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Aug 2021 10:07:47 +0600</lastBuildDate><atom:link href="https://lalo.im/categories/%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>高登交易</title>
+      <link>https://lalo.im/blog/post-2/</link>
+      <pubDate>Sat, 07 Aug 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-2/</guid>
+      <description>简介 高登交易，通过报价和竞价采购的形式，达成企业双方交易。除此之外还涵盖了验厂验货直播、货运物流、任务悬赏、社区交流等功能，实现了立体的企业管控新模式。
+交易 该平台以最先进的竞价采购形式发布交易信息，包括公开竞价和邀请竞价，也可以直接定向采购。供应商之间通过报价竞价的方式，把信息提交给采购商。采购商则可以选择最优的采购方案。
+ 社区 企业可以发布文本、图片或视频等信息，与其他企业之间交流。
+ 直播 该直播只针对制造业的专业领域，涵盖了验厂、验货等场景化直播。</description>
+    </item>
+    
+    <item>
+      <title>艺考帮</title>
+      <link>https://lalo.im/blog/post-3/</link>
+      <pubDate>Fri, 06 Aug 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-3/</guid>
+      <description>关于 艺考帮 app 是一款利于美术艺考生学习的客户端应用，艺考帮中海量素材，随搜随用，个性推荐知识点和范例作品，首创模拟考，在线打分、点评、进行成绩 PK，在艺圈结识与您志趣相投的朋友，非常的方便实用。
+功能介绍 【艺考帮&amp;ndash;你身边的美术老师】
+〖预约报名〗——遇到好画室、好老师即可线上预约报名；
+〖线上画室〗——分分钟就可开个线上画室，操作简单方便；
+〖线上课程〗——画室、老师简单设置即可线上开课；</description>
+    </item>
+    
+    <item>
+      <title>高登商务小程序</title>
+      <link>https://lalo.im/blog/post-6/</link>
+      <pubDate>Mon, 03 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-6/</guid>
+      <description>特性  三分级分销代理 实时计算收益 新的合伙人模式  原型设计 Figma 原型设计图
+预览   扫码进入小程序  </description>
+    </item>
+    
+  </channel>
+</rss>

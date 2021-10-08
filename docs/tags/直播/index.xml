@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>直播 on Lalo&#39;s Blog</title>
+    <link>https://lalo.im/tags/%E7%9B%B4%E6%92%AD/</link>
+    <description>Recent content in 直播 on Lalo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 May 2021 10:07:47 +0600</lastBuildDate><atom:link href="https://lalo.im/tags/%E7%9B%B4%E6%92%AD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于AR的场景化直播设计</title>
+      <link>https://lalo.im/blog/post-5/</link>
+      <pubDate>Sun, 02 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-5/</guid>
+      <description>特性  场景化直播：验厂、验货、巡查、验资等。 AR 技术，测量、3D 模型。 直播笔记 直播流程  部分设计图    </description>
+    </item>
+    
+  </channel>
+</rss>

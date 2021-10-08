@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设计 on Lalo&#39;s Blog</title>
+    <link>https://lalo.im/tags/%E8%AE%BE%E8%AE%A1/</link>
+    <description>Recent content in 设计 on Lalo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Aug 2021 10:07:47 +0600</lastBuildDate><atom:link href="https://lalo.im/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>艺考帮</title>
+      <link>https://lalo.im/blog/post-3/</link>
+      <pubDate>Fri, 06 Aug 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-3/</guid>
+      <description>关于 艺考帮 app 是一款利于美术艺考生学习的客户端应用，艺考帮中海量素材，随搜随用，个性推荐知识点和范例作品，首创模拟考，在线打分、点评、进行成绩 PK，在艺圈结识与您志趣相投的朋友，非常的方便实用。
+功能介绍 【艺考帮&amp;ndash;你身边的美术老师】
+〖预约报名〗——遇到好画室、好老师即可线上预约报名；
+〖线上画室〗——分分钟就可开个线上画室，操作简单方便；
+〖线上课程〗——画室、老师简单设置即可线上开课；</description>
+    </item>
+    
+    <item>
+      <title>开放式工作流的设计</title>
+      <link>https://lalo.im/blog/post-7/</link>
+      <pubDate>Sat, 08 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-7/</guid>
+      <description>特性  自定义工作流 表单构建器 跨团队合作 共享工作流 机器人代替执行  应用场景  内部工作审批 外部团队合作 企业培训  设计图 待更新</description>
+    </item>
+    
+    <item>
+      <title>高登商务小程序</title>
+      <link>https://lalo.im/blog/post-6/</link>
+      <pubDate>Mon, 03 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-6/</guid>
+      <description>特性  三分级分销代理 实时计算收益 新的合伙人模式  原型设计 Figma 原型设计图
+预览   扫码进入小程序  </description>
+    </item>
+    
+    <item>
+      <title>基于AR的场景化直播设计</title>
+      <link>https://lalo.im/blog/post-5/</link>
+      <pubDate>Sun, 02 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/blog/post-5/</guid>
+      <description>特性  场景化直播：验厂、验货、巡查、验资等。 AR 技术，测量、3D 模型。 直播笔记 直播流程  部分设计图    </description>
+    </item>
+    
+  </channel>
+</rss>
