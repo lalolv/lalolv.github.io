@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Lalo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Aug 2021 10:07:47 +0600</lastBuildDate><atom:link href="https://lalo.im/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Oct 2021 10:12:47 +0800</lastBuildDate><atom:link href="https://lalo.im/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang</title>
+      <link>https://lalo.im/tags/golang/</link>
+      <pubDate>Fri, 15 Oct 2021 10:12:47 +0800</pubDate>
+      
+      <guid>https://lalo.im/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>部署</title>
+      <link>https://lalo.im/tags/%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Fri, 15 Oct 2021 10:12:47 +0800</pubDate>
+      
+      <guid>https://lalo.im/tags/%E9%83%A8%E7%BD%B2/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Commerce</title>
       <link>https://lalo.im/tags/commerce/</link>
-      <pubDate>Sun, 08 Aug 2021 10:07:47 +0600</pubDate>
+      <pubDate>Sun, 08 Aug 2021 10:07:47 +0800</pubDate>
       
       <guid>https://lalo.im/tags/commerce/</guid>
       <description></description>
@@ -19,7 +37,7 @@
     <item>
       <title>GraphQL</title>
       <link>https://lalo.im/tags/graphql/</link>
-      <pubDate>Sun, 08 Aug 2021 10:07:47 +0600</pubDate>
+      <pubDate>Sun, 08 Aug 2021 10:07:47 +0800</pubDate>
       
       <guid>https://lalo.im/tags/graphql/</guid>
       <description></description>
@@ -28,7 +46,7 @@
     <item>
       <title>PWA</title>
       <link>https://lalo.im/tags/pwa/</link>
-      <pubDate>Sun, 08 Aug 2021 10:07:47 +0600</pubDate>
+      <pubDate>Sun, 08 Aug 2021 10:07:47 +0800</pubDate>
       
       <guid>https://lalo.im/tags/pwa/</guid>
       <description></description>
@@ -37,7 +55,7 @@
     <item>
       <title>Python</title>
       <link>https://lalo.im/tags/python/</link>
-      <pubDate>Sun, 08 Aug 2021 10:07:47 +0600</pubDate>
+      <pubDate>Sun, 08 Aug 2021 10:07:47 +0800</pubDate>
       
       <guid>https://lalo.im/tags/python/</guid>
       <description></description>
@@ -46,7 +64,7 @@
     <item>
       <title>React</title>
       <link>https://lalo.im/tags/react/</link>
-      <pubDate>Sun, 08 Aug 2021 10:07:47 +0600</pubDate>
+      <pubDate>Sun, 08 Aug 2021 10:07:47 +0800</pubDate>
       
       <guid>https://lalo.im/tags/react/</guid>
       <description></description>
@@ -55,7 +73,7 @@
     <item>
       <title>Saas</title>
       <link>https://lalo.im/tags/saas/</link>
-      <pubDate>Sun, 08 Aug 2021 10:07:47 +0600</pubDate>
+      <pubDate>Sun, 08 Aug 2021 10:07:47 +0800</pubDate>
       
       <guid>https://lalo.im/tags/saas/</guid>
       <description></description>
@@ -89,29 +107,20 @@
     </item>
     
     <item>
-      <title>原型</title>
-      <link>https://lalo.im/tags/%E5%8E%9F%E5%9E%8B/</link>
-      <pubDate>Sat, 08 May 2021 10:07:47 +0600</pubDate>
-      
-      <guid>https://lalo.im/tags/%E5%8E%9F%E5%9E%8B/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工作流</title>
-      <link>https://lalo.im/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
-      <pubDate>Sat, 08 May 2021 10:07:47 +0600</pubDate>
-      
-      <guid>https://lalo.im/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Figma</title>
       <link>https://lalo.im/tags/figma/</link>
       <pubDate>Mon, 03 May 2021 10:07:47 +0600</pubDate>
       
       <guid>https://lalo.im/tags/figma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>原型</title>
+      <link>https://lalo.im/tags/%E5%8E%9F%E5%9E%8B/</link>
+      <pubDate>Mon, 03 May 2021 10:07:47 +0600</pubDate>
+      
+      <guid>https://lalo.im/tags/%E5%8E%9F%E5%9E%8B/</guid>
       <description></description>
     </item>
     
@@ -157,15 +166,6 @@
       <pubDate>Sat, 01 May 2021 10:07:47 +0600</pubDate>
       
       <guid>https://lalo.im/tags/data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://lalo.im/tags/golang/</link>
-      <pubDate>Sat, 01 May 2021 10:07:47 +0600</pubDate>
-      
-      <guid>https://lalo.im/tags/golang/</guid>
       <description></description>
     </item>
     

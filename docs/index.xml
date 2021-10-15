@@ -6,20 +6,20 @@
     <description>Recent content on Lalo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Sep 2021 05:17:45 +0800</lastBuildDate><atom:link href="https://lalo.im/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Oct 2021 10:12:47 +0800</lastBuildDate><atom:link href="https://lalo.im/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>https://lalo.im/posts/my-first-post/</link>
-      <pubDate>Fri, 03 Sep 2021 05:17:45 +0800</pubDate>
+      <title>自动部署服务</title>
+      <link>https://lalo.im/blog/post-10/</link>
+      <pubDate>Fri, 15 Oct 2021 10:12:47 +0800</pubDate>
       
-      <guid>https://lalo.im/posts/my-first-post/</guid>
-      <description>Hello World 这是第一个测试内容</description>
+      <guid>https://lalo.im/blog/post-10/</guid>
+      <description>特性  支持多个项目部署 Slack 消息发送 日志 支持 Slash 命令  使用 Docker 安装 运行命令：</description>
     </item>
     
     <item>
       <title>跨境电商</title>
       <link>https://lalo.im/blog/post-1/</link>
-      <pubDate>Sun, 08 Aug 2021 10:07:47 +0600</pubDate>
+      <pubDate>Sun, 08 Aug 2021 10:07:47 +0800</pubDate>
       
       <guid>https://lalo.im/blog/post-1/</guid>
       <description>介绍 真正的全渠道，精雕细琢，极其灵活和完整的商业接口。 使用您最喜欢的 CMS、CRM、外部系统 API，PIM、POS、ERP 或未来平台。 使用最新技术，渐进式 Web 应用,灵活的 API 架构和插件系统，支持多种销售渠道。 自动本地化定价、税收、控制折扣和促销活动。</description>
@@ -48,15 +48,6 @@
 〖预约报名〗——遇到好画室、好老师即可线上预约报名；
 〖线上画室〗——分分钟就可开个线上画室，操作简单方便；
 〖线上课程〗——画室、老师简单设置即可线上开课；</description>
-    </item>
-    
-    <item>
-      <title>开放式工作流的设计</title>
-      <link>https://lalo.im/blog/post-7/</link>
-      <pubDate>Sat, 08 May 2021 10:07:47 +0600</pubDate>
-      
-      <guid>https://lalo.im/blog/post-7/</guid>
-      <description>特性  自定义工作流 表单构建器 跨团队合作 共享工作流 机器人代替执行  应用场景  内部工作审批 外部团队合作 企业培训  设计图 待更新</description>
     </item>
     
     <item>

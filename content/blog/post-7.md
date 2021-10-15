@@ -1,7 +1,7 @@
 ---
 title: "开放式工作流的设计"
 date: 2021-05-08T10:07:47+06:00
-draft: false
+draft: true
 
 # post thumb
 image: "images/post/post-4.jpg"

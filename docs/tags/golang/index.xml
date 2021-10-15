@@ -6,7 +6,16 @@
     <description>Recent content in Golang on Lalo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 May 2021 10:07:47 +0600</lastBuildDate><atom:link href="https://lalo.im/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Oct 2021 10:12:47 +0800</lastBuildDate><atom:link href="https://lalo.im/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自动部署服务</title>
+      <link>https://lalo.im/blog/post-10/</link>
+      <pubDate>Fri, 15 Oct 2021 10:12:47 +0800</pubDate>
+      
+      <guid>https://lalo.im/blog/post-10/</guid>
+      <description>特性  支持多个项目部署 Slack 消息发送 日志 支持 Slash 命令  使用 Docker 安装 运行命令：</description>
+    </item>
+    
     <item>
       <title>数据工厂</title>
       <link>https://lalo.im/blog/post-4/</link>
